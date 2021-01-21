@@ -1,11 +1,13 @@
 import React from 'react';
+import './sideBar.css'
 
 
 function sideBar() {
     return (
-        <>
-        <h1>sideBar</h1>
-        </>
+        <div className="side">
+            <h1>Team</h1>
+            <button>+Add team</button>
+        </div>
     );
 }
 

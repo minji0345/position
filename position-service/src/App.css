@@ -37,14 +37,19 @@
   }
 } */
 
-.display {
+body {
   display: flex;
   flex-direction:row;
-  margin: 100px;
+  margin:0;
 }
 
 .main {
   display: flex;
   flex-direction:column;
-  margin: 100px;
+  margin:20px;
+}
+
+.side{
+  width: 200px;
+  height: 700px;
 }

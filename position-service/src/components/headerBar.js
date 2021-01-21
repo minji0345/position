@@ -4,9 +4,18 @@ import React from 'react';
 function headerBar() {
     return (
         <>
-        <h1>heaerBar</h1>
+        <div>
+            <button>All</button>
+            <button>Public</button>
+            <button>Private</button>
+        </div>
+        <div>
+            <button>logout</button>
+        </div>
         </>
     );
+{/* 위 버튼 등을 컴포넌트로 넘겨 줘야 겠지? */}
 }
+
 
 export default headerBar;

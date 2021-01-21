@@ -1,22 +1,23 @@
+import React from "react";
 import './App.css';
 import headerBar from './components/headerBar';
 import mainCalendar from './components/mainCalendar';
 import sideBar from './components/sideBar';
 
 
-function App() {
+const App = () => {
   return (
-    <>
-      <div class="display">
+      <body>
         <div>
-          <sideBar>sideBar</sideBar>
+          <div>
+            <sideBar className="side"/>
+          </div>
+          <div class="main">
+            <headerBar>headerBar</headerBar>
+            <mainCalendar>main</mainCalendar>
+          </div>
         </div>
-        <div class="main">
-          <headerBar>headerBar</headerBar>
-          <mainCalendar>mainCalendar</mainCalendar>
-        </div>
-      </div>
-    </>
+      </body>
   );
 }
 
