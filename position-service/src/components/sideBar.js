@@ -4,7 +4,7 @@ import './sideBar.css'
 
 function sideBar() {
     return (
-        <div className="side">
+        <div className="side-bar">
             <h1>Team</h1>
             <button>+Add team</button>
         </div>
