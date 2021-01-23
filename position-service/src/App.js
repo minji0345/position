@@ -1,16 +1,25 @@
-import React from "react";
+import React from 'react';
+import { createGlobalStyle } from 'styled-components'
+import SideBar from './compoenets/SideBar'
+import logo from './compoenets/images/logo-02.png';
 import './App.css';
-import Main from './components/Main';
-import headerBar from './components/headerBar';
-import mainCalendar from './components/mainCalendar';
-import sideBar from './components/sideBar';
+import MainCalendar from './compoenets/MainCalendar';
+import Main from './compoenets/Main';
+
+const GlonbalStyle = createGlobalStyle`
+  body {
+    
+  }
+`;
 
 
-const App = () => {
+function App() {
   return (
-      <body>
-        <Main />
-      </body>
+    <body>
+      <img className="logo-img" src={logo}/>
+      <div className="back-img"></div>
+      <Main></Main>
+    </body>
   );
 }
 

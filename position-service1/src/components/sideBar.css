@@ -1,6 +1,6 @@
-.side-bar{
+.bar{
     width:200px;
-    height: 1080px;
+    height: 100px;
     background-color: gray;
     margin: auto 0;
 }
