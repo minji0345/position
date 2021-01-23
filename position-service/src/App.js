@@ -5,12 +5,13 @@ import logo from './compoenets/images/logo-02.png';
 import './App.css';
 import MainCalendar from './compoenets/MainCalendar';
 import Main from './compoenets/Main';
+import HeaderBar from './compoenets/HeaderBar';
 
-const GlonbalStyle = createGlobalStyle`
-  body {
+// const GlonbalStyle = createGlobalStyle`
+//   body {
     
-  }
-`;
+//   }
+// `;
 
 
 function App() {
@@ -18,7 +19,10 @@ function App() {
     <body>
       <img className="logo-img" src={logo}/>
       <div className="back-img"></div>
-      <Main></Main>
+      <div className="main-page">
+        <HeaderBar/>
+        <Main></Main>
+      </div>
     </body>
   );
 }

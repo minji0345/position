@@ -6,10 +6,9 @@ const SideBarBlock = styled.div`
     height:65%;
     background: #ffffff;
     position:relative;
-    margin:50px;
     border-radius:5px;
     padding:10px;
-    display:flex;
+    margin:20px;
 
 `;
 

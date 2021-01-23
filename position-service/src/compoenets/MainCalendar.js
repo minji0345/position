@@ -6,9 +6,9 @@ const MainCalendarBlock = styled.div`
     height:65%;
     background: #ffffff;
     position:relative;
-    margin:50px;
     border-radius:5px;
     padding:10px;
+    margin:20px;
 
 `;
 

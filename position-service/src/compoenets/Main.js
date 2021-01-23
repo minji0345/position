@@ -4,7 +4,7 @@ import MainCalendar from './MainCalendar';
 import SideBar from './SideBar';
 
 const MainBlock = styled.div`
-    width:100%;
+    width:100%
     height:100%;
     position:relative;
     margin:50px;
