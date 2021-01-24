@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SideBarBlock = styled.div`
-    width:11%;
-    height:65%;
+    width:12%;
+    height:600px;
     background: #ffffff;
     position:relative;
     border-radius:5px;

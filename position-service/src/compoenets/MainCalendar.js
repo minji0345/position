@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MainCalendarBlock = styled.div`
-    width:100%;
-    height:65%;
+    width:70%;
+    height:600px;
     background: #ffffff;
     position:relative;
     border-radius:5px;

@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeaderBarBlock = styled.div`
-    position:fixed;
+    position:relative;
     border-radius:5px;
     padding:10px;
     left:20%;
     display:flex;
-
+    width:80%;
+    height:30%;
 `;
 
 function HeaderBar({children}) {

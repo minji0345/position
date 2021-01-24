@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 import SideBar from './compoenets/SideBar'
 import logo from './compoenets/images/logo-02.png';
 import './App.css';
-import MainCalendar from './compoenets/MainCalendar';
 import Main from './compoenets/Main';
+import MainCalendar from './compoenets/MainCalendar';
 import HeaderBar from './compoenets/HeaderBar';
 
 // const GlonbalStyle = createGlobalStyle`
