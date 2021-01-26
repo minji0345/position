@@ -1,26 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
+import './HeaderBar.css'
 
 const HeaderBarBlock = styled.div`
     position:relative;
     border-radius:5px;
-    padding:10px;
-    left:20%;
+    left:12%;
     display:flex;
     width:80%;
-    height:30%;
+    height:10%;
+    display:flex;
+    justify-content:space-between;
 `;
 
 function HeaderBar({children}) {
     return (
     <HeaderBarBlock>
-        <div>
-            <button>All</button>
-            <button>Public</button>
-            <button>Private</button>
+        <div className="mode">
+            <a>All</a>
+            <a>Public</a>
+            <a>Private</a>
         </div>
-        <div>
-            <button>Logout</button>
+        <div className="mode">
+            <a>Logout</a>
         </div>
     </HeaderBarBlock>
     );

@@ -12,9 +12,22 @@ const MainCalendarBlock = styled.div`
 
 `;
 
-function MainCalendar({children}) {
+
+const DateBox = () => {
     return (
-    <MainCalendarBlock>{children}</MainCalendarBlock>
+        <div className="date-box">
+            datebox
+        </div>
+    )
+}
+
+function MainCalendar() {
+    //const dateBoxList = 
+    //map  으로 넘겨주면 되지 않을까?
+    return (
+    <MainCalendarBlock>
+        <DateBox/>
+    </MainCalendarBlock>
     );
 }
 

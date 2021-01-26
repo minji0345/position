@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
 body {
   background: #EBEBEB;
-  /* margin:10px; */
   width:100%;
   height:1080px;
   display: flex;
+  font-family: 'Lexend Deca', sans-serif;
 }
 
 .logo-img{
