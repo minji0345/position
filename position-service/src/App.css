@@ -1,63 +1,37 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
 body {
   background: #EBEBEB;
-  margin:10px;
   width:100%;
   height:1080px;
   display: flex;
+  font-family: 'Lexend Deca', sans-serif;
 }
 
 .logo-img{
-  width:120px;
+  width:110px;
   position: absolute;
   z-index:100;
+  margin: 10px;
 }
 
 .back-img{
-  width: 280px;
-  height: 280px;
+  width: 250px;
+  height: 250px;
   background-color: white;
   position: absolute;
-  left: -120px;
-  top:-120px;
+  left: -110px;
+  top:-110px;
   z-index: 50;
   border-radius: 400px;
+}
+
+.main-page{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height:80%;
+  position: fixed;
+  top:5%;
+  margin: 10px;
 }
