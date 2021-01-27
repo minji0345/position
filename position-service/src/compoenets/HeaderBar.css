@@ -1,0 +1,19 @@
+
+.mode a{
+    padding:10px;
+    margin:5px;
+    width:95px;
+    height:45px;
+    font-size:16px;
+    border:none;
+    background:#c8c9c4;
+    color:white;
+    border-radius: 5px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+a:hover{
+    background:black;
+    cursor: pointer;
+}
+

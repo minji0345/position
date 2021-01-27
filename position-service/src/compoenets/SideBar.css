@@ -1,0 +1,23 @@
+h2{
+    color: #52F25D;
+    text-align: center;
+    margin-top: 0;
+}
+
+.team-list{
+    display: flex;
+    padding: 5px;
+    line-height: 10px;
+    margin: 10px;
+}
+
+.team-name{
+    margin-left: 10px;
+}
+
+.tag-button{
+    width:10px;
+    height:10px;
+    background-color: black;
+    border-radius: 10px;
+}
