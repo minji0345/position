@@ -13,36 +13,24 @@ const SideBarBlock = styled.div`
 
 `;
 
-const TeamName = ({teams}) => {
+const TeamList = ({team, color}) => {
 
     return (
-        <div className="team-name" teams={teams}>
-            {/*   리스트 만들어 넣기 */}
+        <div className="team-list">
+        <div className="tag-button" style={{ background: color }}></div><div className="team-name">{team}</div>
         </div>
     )
 }
 
-function SideBar({teams, colors, color}) {
+function SideBar({Team}) {
     
-    // const TeamList = teams.map(
-    //     (team) => (<TeamName team={team}/>)
-    // )
-    //tag-button props로 넘겨줄것
+    const teamList = Team.map(
+        (team) => (<TeamList team={team.name} color={team.tag_color}/>)
+    )
     return (
     <SideBarBlock>
             <h2>Team</h2>
-            <div className="team-list">
-                <div className="tag-button" style={{ background: color }}></div><div className="team-name">{teams[0]}</div>
-            </div>
-            <div className="team-list">
-                <div className="tag-button"></div><div className="team-name">{teams[1]}</div>
-            </div>
-            <div className="team-list">
-                <div className="tag-button"></div><div className="team-name">{teams[2]}</div>
-            </div>
-            <div className="team-list">
-                <div className="tag-button"></div><div className="team-name">{teams[3]}</div>
-            </div>
+            {teamList}
     </SideBarBlock>
     );
 }

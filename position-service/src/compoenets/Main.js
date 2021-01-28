@@ -14,11 +14,11 @@ const MainBlock = styled.div`
     margin-top:3%;
 `;
 
-function Main({teams, colors, color}) {
+function Main({Team}) {
     return (
     <MainBlock>
-        <SideBar color={color} colors={colors} teams={teams}>sidebar</SideBar>
-        <MainCalendar colors={colors} teams={teams}>MainCalendar</MainCalendar>
+        <SideBar Team={Team} ></SideBar>
+        <MainCalendar >MainCalendar</MainCalendar>
     </MainBlock>
     );
 }
