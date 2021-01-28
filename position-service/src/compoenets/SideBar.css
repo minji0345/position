@@ -21,3 +21,27 @@ h2{
     background-color: black;
     border-radius: 10px;
 }
+
+.sdie-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+}
+
+.add-button{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-button a{
+    background-color: #52F25D;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 80px;
+    text-align: center;
+}

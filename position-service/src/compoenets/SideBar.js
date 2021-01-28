@@ -29,8 +29,13 @@ function SideBar({Team}) {
     )
     return (
     <SideBarBlock>
-            <h2>Team</h2>
-            {teamList}
+            <div className="side-bar">
+                <div>
+                    <h2>Public</h2>
+                    {teamList}
+                </div>
+                <div className="add-button"><a>+ Add</a></div>
+            </div>
     </SideBarBlock>
     );
 }
