@@ -21,7 +21,7 @@ function HeaderBar({children}) {
             <a>Public</a>
             <a>Private</a>
         </div>
-        <div className="mode">
+        <div className="login">
             <a>Logout</a>
         </div>
     </HeaderBarBlock>

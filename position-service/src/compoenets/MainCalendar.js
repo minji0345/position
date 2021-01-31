@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MainCalendarBlock = styled.div`
+    display:flex;
     width:70%;
-    height:600px;
+    height:70vh;
     background: #ffffff;
     position:relative;
     border-radius:5px;
