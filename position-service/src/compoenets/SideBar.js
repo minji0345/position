@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import './SideBar.css';
 
 const SideBarBlock = styled.div`
+    display:flex;
     width:12%;
-    height:600px;
+    height:70vh;
     background: #ffffff;
     position:relative;
     border-radius:5px;
     padding:10px;
-    margin:20px;
-
+    margin: auto 0;
 `;
 
 const TeamList = ({team, color}) => {
@@ -30,7 +30,7 @@ function SideBar({Team}) {
     return (
     <SideBarBlock>
             <div className="side-bar">
-                <div>
+                <div className="public-team-list">
                     <h2>Public</h2>
                     {teamList}
                 </div>
