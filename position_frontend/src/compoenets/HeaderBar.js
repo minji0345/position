@@ -13,11 +13,11 @@ const HeaderBarBlock = styled.div`
     justify-content:space-between;
 `;
 
-function HeaderBar({children}) {
+function HeaderBar({children, onClick}) {
     return (
     <HeaderBarBlock>
         <div className="mode">
-            <a>All</a>
+            <a onClick={onClick}>All</a>
             <a>Public</a>
             <a>Private</a>
         </div>

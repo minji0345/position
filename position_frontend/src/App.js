@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createGlobalStyle } from 'styled-components'
 import SideBar from './compoenets/SideBar'
 import logo from './compoenets/images/logo-02.png';
@@ -25,12 +25,24 @@ function App() {
     setColor(team);
   };
 
+  const handleClick = () => {
+    fetch('http://localhost:3000/users/', {
+      method: 'GET',
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+      console.log(data)
+    })
+    .catch(error => console.log(error));
+  }
+
   return (
     <body>
       <img className="logo-img" src={logo}/>
       <div className="back-img"></div>
       <div className="main-page">
-        <HeaderBar/>
+        <HeaderBar onClick={handleClick} />
         <Main color={color} colors={colors} teams={teams}></Main>
       </div>
     </body>
