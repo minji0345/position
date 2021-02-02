@@ -19,7 +19,7 @@ class Schedule(models.Model):
     title = models.CharField(max_length=30)
     content = models.TextField(default="")
     is_done = models.BooleanField(default=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     d_day = models.DateTimeField()
 
     def __str__(self):
