@@ -5,7 +5,7 @@ from .models import Task, Schedule
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['id', 'title', 'content', 'is_done', 'team', 'start_date', 'due_date']
+        fields = ['id', 'title', 'content', 'is_done', 'team', 'start_date', 'due_date', 'users']
 
 
 class ScheduleSerializer(serializers.ModelSerializer):
