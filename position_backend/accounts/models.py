@@ -27,6 +27,7 @@ class Profile(models.Model):
 class Team(models.Model):
 	name = models.CharField(max_length=30)
 	tag_color = models.CharField(max_length=10)
+	team_info = models.TextField(default="")
 	created_at = models.DateTimeField(auto_now_add=True)
 	users = models.ManyToManyField(Profile, through='TeamLog', related_name='teams')
 
