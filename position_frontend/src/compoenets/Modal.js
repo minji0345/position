@@ -1,29 +1,60 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import './Modal.css'
+import { MdClose } from 'react-icons/md';
 
-function Modal({ className, visible, children }) {
+function Modal({ className,
+    onClose,
+    maskClosable,
+    closable,
+    visible,}) {
+
+    useEffect(() => {
+        document.body.style.cssText = `position: fixed; top: -${window.scrollY}px`
+        return () => {
+            const scrollY = document.body.style.top
+            document.body.style.cssText = `position: ""; top: "";`
+            window.scrollTo(0, parseInt(scrollY || '0') * -1)
+        }
+    }, [])
+
+    const onMaskClick = (e) => {
+        if (e.target === e.currentTarget) {
+            onClose(e)
+            }
+        }
+        
+        const close = (e) => {
+            if (onClose) {
+            onClose(e)
+            }
+        }
+
     return (
         <>
         <ModalOverlay visible={visible} />
-        <ModalWrapper className={className} tabIndex="-1" visible={visible}>
+        <ModalWrapper
+            className={className}
+            onClick={maskClosable ? onMaskClick : null}
+            tabIndex="-1"
+            visible={visible}
+            >
             <ModalInner tabIndex="0" className="modal-inner">
-            {children}
+                <input placeholder="your postion"></input>
+                <button className="modal-btn">Add</button>
+                {closable && <MdClose className="modal-close" onClick={close} />}
             </ModalInner>
-        </ModalWrapper>
+            </ModalWrapper>
         </>
     )
-    }
+}
+
 
     Modal.propTypes = {
     visible: PropTypes.bool,
     }
 
-    Modal.defaultProps = {
-        closable: true,
-        maskClosable: true,
-        visible: false
-    }
 
     const ModalWrapper = styled.div`
     box-sizing: border-box;
@@ -58,10 +89,11 @@ function Modal({ className, visible, children }) {
     border-radius: 10px;
     width: 360px;
     max-width: 480px;
+    height: 40%;
     top: 50%;
     transform: translateY(-50%);
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 10px 20px;
 `
 
 export default Modal

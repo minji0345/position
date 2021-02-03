@@ -1,0 +1,42 @@
+.modal-inner{
+    color: black;
+    width: 100%;
+}
+
+.modal-inner input{
+    border: none;
+    background-color:#c8c9c4;
+    margin:5px;
+    width: 70%;
+    height: 15%;
+    border-radius: 5px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.modal-btn{
+    /* width: 30px; 왜 너비가 안먹을까? 아래 패딩 나중에 고칠 것*/
+    margin:5px;
+    width: 20%;
+    height: 15%;
+    font-size:16px;
+    border:none;
+    background:#c8c9c4;
+    color:white;
+    border-radius: 5px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.modal-btn:hover{
+    background:black;
+    cursor: pointer;
+}
+
+.modal-close{
+    position: fixed;
+    margin-left: 0;
+    margin-top: 2%;
+}
+
+.modal-close:hover {
+    cursor: pointer;
+}
