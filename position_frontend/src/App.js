@@ -3,8 +3,6 @@ import logo from './compoenets/images/logo-02.png';
 import './App.css';
 import Main from './compoenets/Main';
 import HeaderBar from './compoenets/HeaderBar';
-// import SideBar from './compoenets/SideBar'
-// import MainCalendar from './compoenets/MainCalendar';
 
 // colors = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
 
@@ -33,18 +31,6 @@ const Team = [
 
 function App() {
 
-  // const [team, setTeam ] = useState(teams);
-
-  // const [color, setColor] = useState(colors);
-
-
-  // const handleColor = (color) => {
-  //   setColor(color);
-  // };
-
-  // const handleTeam = (team) => {
-  //   setColor(team);
-  // };
 
   return (
     <body>
