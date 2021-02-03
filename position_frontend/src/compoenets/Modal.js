@@ -4,6 +4,15 @@ import styled from 'styled-components'
 import './Modal.css'
 import { MdClose } from 'react-icons/md';
 
+const tagColors1 = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
+
+const TagColor = ({ color, selected }) => {
+    return (
+        <button style={{ background: color}} className="team-tagcolor" onClick={selected}></button>
+    )
+}
+//selected로 color의 key값을 전달
+
 function Modal({ className,
     onClose,
     maskClosable,
@@ -31,6 +40,13 @@ function Modal({ className,
             }
         }
 
+        const colorList = tagColors1.map(
+            (color) => (<TagColor 
+                color={color} key={color} 
+                // onChange={() => onSelect(color)} 
+                />)
+        );
+
     return (
         <>
         <ModalOverlay visible={visible} />
@@ -44,13 +60,9 @@ function Modal({ className,
                 {closable && <MdClose className="modal-close" onClick={close} />}
                 <div className="modal-inner-box">
                     <input placeholder="Team Name"></input>
-                    <input placeholder="Team info"></input>
+                    <input placeholder="Team Info"></input>
                     <div className="team-tagcolor-list">
-                        <button className="team-tagcolor"></button>
-                        <button className="team-tagcolor"></button>
-                        <button className="team-tagcolor"></button>
-                        <button className="team-tagcolor"></button>
-                        <button className="team-tagcolor"></button>
+                        {colorList}
                     </div>
                     <button className="modal-btn">Add</button>
                 </div>
@@ -97,8 +109,7 @@ function Modal({ className,
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
     background-color: #fff;
     border-radius: 10px;
-    width: 360px;
-    max-width: 480px;
+    width: 40%;
     height: 40%;
     top: 50%;
     transform: translateY(-50%);
