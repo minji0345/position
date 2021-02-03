@@ -20,10 +20,13 @@ import accounts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('accounts.urls')),
+
+    # 기본 로직
     path('teams/', include('accounts.urls')),
-    path('tasks/', include('taskManager.urls')),
-    path('schedule/', include('taskManager.urls')),
+
+    # 회원 가입 및 로그인
     path('signin/', obtain_jwt_token),
     path('signup/', accounts.views.createUser),
+    path('refresh_jwt/', refresh_jwt_token),
+    path('verify_jwt/', verify_jwt_token),
 ]

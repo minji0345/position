@@ -23,13 +23,15 @@ def createUser(request):
         serializer = UserCreateSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            data = serializer.data
+            data["password"] = "password was encryted"
+            return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 def getUsers(request):
     user = User.objects.all().last()
-    return JsonResponse({
+    return Response({
         "username": user.username,
         "email": user.email,
         "password": user.password
