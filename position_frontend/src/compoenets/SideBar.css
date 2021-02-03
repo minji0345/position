@@ -61,3 +61,7 @@ h2{
     line-height: 30px;
     
 }
+
+.add-button a:hover{
+    cursor: pointer;
+}
