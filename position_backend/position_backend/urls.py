@@ -23,6 +23,7 @@ urlpatterns = [
 
     # 기본 로직
     path('teams/', include('accounts.urls')),
+    path('search/', accounts.views.search),
 
     # 회원 가입 및 로그인
     path('signin/', obtain_jwt_token),

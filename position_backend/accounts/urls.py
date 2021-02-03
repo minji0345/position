@@ -6,7 +6,6 @@ urlpatterns = [
     path('<str:team_title>/', views.getUsers),
     path('<str:team_title>/<int:pk>/', views.getUsers),
 
-
     # manage Task model in taskManager app
     path('<str:team_title>/tasks/', include('taskManager.urls')),
 ]

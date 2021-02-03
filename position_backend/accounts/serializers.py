@@ -23,14 +23,13 @@ class TeamLogSerializer(serializers.ModelSerializer):
 
 
 class UserCreateSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(required=True, validators=[UniqueValidator(queryset=User.objects.all())])
-    username = serializers.CharField(required=True) 
+    username = serializers.EmailField(required=True) 
     password = serializers.CharField(required=True)
     password_check = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'password', 'password_check']
+        fields = ['id', 'username', 'password', 'password_check']
 
     def validate(self, data):
         if data['password'] != data['password_check']:
@@ -40,7 +39,12 @@ class UserCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(
             username=validated_data['username'],
-            email=validated_data['email'],
             password=validated_data['password']
             )
         return user
+
+
+class UserSerialzier(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username']
