@@ -35,3 +35,18 @@ body {
   top:5%;
   margin: 10px;
 }
+
+button:focus{
+  outline: none;
+  border: none;
+}
+
+input:focus{
+  outline: none;
+  border: none;
+}
+
+div:focus{
+  outline: none;
+  border: none;
+}

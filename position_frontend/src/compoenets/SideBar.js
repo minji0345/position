@@ -5,6 +5,7 @@ import Modal from './Modal';
 
 const SideBarBlock = styled.div`
     display:flex;
+    justify-content: center;
     width:12%;
     height:70vh;
     background: #ffffff;
@@ -31,11 +32,18 @@ function SideBar({Team}) {
     )
 
     const [modalVisible, setModalVisible] = useState(false)
+    
     const openModal = () => {
     setModalVisible(true)
     }
     const closeModal = () => {
         setModalVisible(false)
+    }
+
+    Modal.defaultProps = {
+        closable: true,
+        maskClosable: true,
+        visible: false
     }
 
     return (
@@ -47,13 +55,13 @@ function SideBar({Team}) {
                 </div>
                 <div className="add-button">
                     <a onClick={openModal}>+ Add</a>
-                    {
-                        modalVisible && <Modal
-                        visible={modalVisible}
-                        closable={true}
-                        maskClosable={true}
-                        onClose={closeModal}> made modal </Modal>
-                    }
+                        {
+                            modalVisible && <Modal
+                            visible={modalVisible}
+                            closable={true}
+                            maskClosable={true}
+                            onClose={closeModal}/>
+                        }
                 </div>
             </div>
     </SideBarBlock>

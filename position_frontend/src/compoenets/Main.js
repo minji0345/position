@@ -21,6 +21,7 @@ function Main({Team}) {
         <MainCalendar >MainCalendar</MainCalendar>
     </MainBlock>
     );
+      
 }
 
 export default Main
