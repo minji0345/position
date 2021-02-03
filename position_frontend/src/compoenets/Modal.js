@@ -41,9 +41,19 @@ function Modal({ className,
             visible={visible}
             >
             <ModalInner tabIndex="0" className="modal-inner">
-                <input placeholder="your postion"></input>
-                <button className="modal-btn">Add</button>
                 {closable && <MdClose className="modal-close" onClick={close} />}
+                <div className="modal-inner-box">
+                    <input placeholder="Team Name"></input>
+                    <input placeholder="Team info"></input>
+                    <div className="team-tagcolor-list">
+                        <button className="team-tagcolor"></button>
+                        <button className="team-tagcolor"></button>
+                        <button className="team-tagcolor"></button>
+                        <button className="team-tagcolor"></button>
+                        <button className="team-tagcolor"></button>
+                    </div>
+                    <button className="modal-btn">Add</button>
+                </div>
             </ModalInner>
             </ModalWrapper>
         </>
