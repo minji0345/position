@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import './Modal.css'
@@ -28,6 +28,7 @@ function Modal({ className,
         }
     }, [])
 
+    //modal창 열림 & 닫힘 관리
     const onMaskClick = (e) => {
         if (e.target === e.currentTarget) {
             onClose(e)
@@ -40,12 +41,47 @@ function Modal({ className,
             }
         }
 
+        //컬러 값 받아와서 매핑해주는 코드
+
         const colorList = tagColors1.map(
             (color) => (<TagColor 
                 color={color} key={color} 
                 // onChange={() => onSelect(color)} 
                 />)
         );
+
+        //input 값 관리
+        const [inputs, setInputs] = useState({
+            team_name: '',
+            team_info:'',
+        })
+
+        const { team_name, team_info } = inputs
+
+        const onChange = (e) => {
+
+        const { name, value } = e.target   
+
+        const nextInputs = {            
+            ...inputs,  
+            [name]: value,
+        }
+
+        setInputs(nextInputs)       
+
+    }
+    
+    //추후에 구현 예정
+    const onReset = () => {			
+        
+        const resetInputs = {       
+            team_name: '',
+            tag_color: '',
+        }
+        setInputs(resetInputs)      	  
+    }
+
+    //team_name, team_info 로 백으로 값 넘겨주기
 
     return (
         <>
@@ -59,11 +95,12 @@ function Modal({ className,
             <ModalInner tabIndex="0" className="modal-inner">
                 {closable && <MdClose className="modal-close" onClick={close} />}
                 <div className="modal-inner-box">
-                    <input placeholder="Team Name"></input>
-                    <input placeholder="Team Info"></input>
+                    <input placeholder="Team Name" name="team_name" onChange={onChange} value={team_name}></input>
+                    <input placeholder="Team Info" name="team_info" onChange={onChange} value={team_info}></input>
                     <div className="team-tagcolor-list">
                         {colorList}
                     </div>
+                    <div> {team_name},{team_info} </div>
                     <button className="modal-btn">Add</button>
                 </div>
             </ModalInner>
