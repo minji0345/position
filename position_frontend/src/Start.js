@@ -32,7 +32,7 @@ function Login() {
 function Start() {
 
     return (
-        <div className="div-body">
+        <div className="start-body">
             <Router>
                 <Login></Login>
                     <LoginBox>

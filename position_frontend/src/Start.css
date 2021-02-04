@@ -1,6 +1,6 @@
-.div-body{
+div.start-body{
     position:absolute;
-    width: 100vh;
+    width:100vh;
     height: 100vh;
 }
 
