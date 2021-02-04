@@ -5,42 +5,21 @@ import Main from './compoenets/Main';
 import HeaderBar from './compoenets/HeaderBar';
 
 // colors = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
+// 여기서 로그인 컴포넌트 , headercomponents, main 다르게 해줄 것
 
-const Team = [
-  {
-    name : "멋사",
-    tag_color : "#FF5702",
-    users: []
-  },
-  {
-    name : "Position",
-    tag_color : "#F20A01",
-    users: []
-  },
-  {
-    name : "Cont,",
-    tag_color : "#F5C7C8",
-    users: []
-  },
-  {
-    name : "연인",
-    tag_color : "#BAC2E5",
-    users: []
-  }
-]
+
 
 function App() {
 
-
-  return (
-    <body>
+return (
+    <div className="app-body">
       <img className="logo-img" src={logo}/>
       <div className="back-img"></div>
       <div className="main-page">
         <HeaderBar/>
-        <Main Team={Team}></Main>
+        <Main></Main>
       </div>
-    </body>
+    </div>
   );
 }
 
