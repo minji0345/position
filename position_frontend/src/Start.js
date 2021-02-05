@@ -36,9 +36,11 @@ function Start() {
             <Router>
                 <Login></Login>
                     <LoginBox>
-                        <Link to="/App">
-                        <button>login</button>
-                        </Link>
+                        <input placeholder="E-mail"></input>
+                        <input placeholder="Password"></input>
+                            <Link to="/App">
+                                <button>login</button>
+                            </Link>
                     </LoginBox>
                 <Switch>
                     <Route exact path="/App" component={App} />

@@ -1,24 +1,38 @@
-div.start-body{
-    position:absolute;
-    width:100vh;
-    height: 100vh;
+div.start-body {
+	position: absolute;
+	width: 100vh;
+	height: 100vh;
 }
 
-.start-logo-img{
-    position: absolute;
-    width:40vh;
-    z-index:-50;
-    top:30vh;
-    left:10vh;
+.start-logo-img {
+	position: absolute;
+	width: 40vh;
+	z-index: -50;
+	top: 30vh;
+	left: 10vh;
 }
 
-.start-back-img{
-    position: absolute;
-    background-color: white;
-    width:100vh;
-    height:100vh;
-    z-index:-100;
-    border-radius: 0 50vh 50vh 0;
-    box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.16);
-    left: -10vh;
+.start-back-img {
+	position: absolute;
+	background-color: white;
+	width: 100vh;
+	height: 100vh;
+	z-index: -100;
+	border-radius: 0 50vh 50vh 0;
+	box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.16);
+	left: -10vh;
+}
+
+.start-body input {
+	border: none;
+	background-color: #ddded9;
+	margin: 15px;
+	width: 80%;
+	height: 10%;
+	border-radius: 50px;
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 15px;
+	padding-left: 5%;
+	position: relative;
+	top: 5%;
 }
