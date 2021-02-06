@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import './SideBar.css';
-import Modal from './Modal';
+import AddTeamModal from './modals/AddTeamModal';
 
 const SideBarBlock = styled.div`
     display:flex;
@@ -40,7 +40,7 @@ function SideBar({Team}) {
         setModalVisible(false)
     }
 
-    Modal.defaultProps = {
+    AddTeamModal.defaultProps = {
         closable: true,
         maskClosable: true,
         visible: false
@@ -56,7 +56,7 @@ function SideBar({Team}) {
                 <div className="add-button">
                     <a onClick={openModal}>+ Add</a>
                         {
-                            modalVisible && <Modal
+                            modalVisible && <AddTeamModal
                             visible={modalVisible}
                             closable={true}
                             maskClosable={true}

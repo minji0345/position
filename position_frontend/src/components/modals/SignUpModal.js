@@ -1,24 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import './Modal.css'
 import { MdClose } from 'react-icons/md';
+ 
+//selected로 color의 key값을 전달
 
-function Modal({ className,
+function SignUpModal({ className,
     onClose,
     maskClosable,
     closable,
     visible,}) {
 
-    useEffect(() => {
-        document.body.style.cssText = `position: fixed; top: -${window.scrollY}px`
-        return () => {
-            const scrollY = document.body.style.top
-            document.body.style.cssText = `position: ""; top: "";`
-            window.scrollTo(0, parseInt(scrollY || '0') * -1)
-        }
-    }, [])
-
+    
+    //modal창 열림 & 닫힘 관리
     const onMaskClick = (e) => {
         if (e.target === e.currentTarget) {
             onClose(e)
@@ -31,6 +26,43 @@ function Modal({ className,
             }
         }
 
+        //지정된 컬러 값 받아와서 매핑해주는 코드
+
+        //input 값 관리
+        const [inputs, setInputs] = useState({
+            username: '',
+            password:'',
+            password_check:'',
+        })
+
+        const { username, password, password_check } = inputs
+
+        const onChange = (e) => {
+
+        const { name, value } = e.target   
+
+        const nextInputs = {            
+            ...inputs,  
+            [name]: value,
+        }
+
+        setInputs(nextInputs)       
+
+    }
+    
+    //추후에 구현 예정
+    const onReset = () => {			
+        
+        const resetInputs = {       
+            username: '',
+            password:'',
+            password_check:'',
+        }
+        setInputs(resetInputs)      	  
+    }
+
+    //add버튼 누르면 team_name, team_info 명으로 백으로 값 넘겨주기! -> 구현 해야함
+
     return (
         <>
         <ModalOverlay visible={visible} />
@@ -41,9 +73,14 @@ function Modal({ className,
             visible={visible}
             >
             <ModalInner tabIndex="0" className="modal-inner">
-                <input placeholder="your postion"></input>
-                <button className="modal-btn">Add</button>
                 {closable && <MdClose className="modal-close" onClick={close} />}
+                <div className="modal-inner-box">
+                    <input placeholder="E-mail" name="username" onChange={onChange} value={username}></input>
+                    <input placeholder="Password" name="password" onChange={onChange} value={password}></input>
+                    <input placeholder="Password check" name="password_check" onChange={onChange} value={password_check}></input>
+                    <div> {username},{password} </div>
+                    <button className="modal-btn" onClick={close}>Sign Up</button>
+                </div>
             </ModalInner>
             </ModalWrapper>
         </>
@@ -51,7 +88,7 @@ function Modal({ className,
 }
 
 
-    Modal.propTypes = {
+    SignUpModal.propTypes = {
     visible: PropTypes.bool,
     }
 
@@ -87,8 +124,7 @@ function Modal({ className,
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
     background-color: #fff;
     border-radius: 10px;
-    width: 360px;
-    max-width: 480px;
+    width: 40%;
     height: 40%;
     top: 50%;
     transform: translateY(-50%);
@@ -96,4 +132,4 @@ function Modal({ className,
     padding: 10px 20px;
 `
 
-export default Modal
+export default SignUpModal
