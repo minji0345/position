@@ -15,7 +15,7 @@ const TagColor = ({ color, selected }) => {
 }
 //selected로 color의 key값을 전달
 
-function Modal({ className,
+function AddTeamModal({ className,
     onClose,
     maskClosable,
     closable,
@@ -113,7 +113,7 @@ function Modal({ className,
 }
 
 
-    Modal.propTypes = {
+    AddTeamModal.propTypes = {
     visible: PropTypes.bool,
     }
 
@@ -157,4 +157,4 @@ function Modal({ className,
     padding: 10px 20px;
 `
 
-export default Modal
+export default AddTeamModal

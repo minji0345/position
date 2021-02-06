@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Switch, Link, Route, BrowserRouter as Router } from "react-router-dom"
 import './Start.css'
-import logo from './compoenets/images/logo-02.png';
+import logo from './components/images/logo-02.png';
 import styled from 'styled-components'
 import App from './App'
-import SignUpModal from './compoenets/SignUpModal';
+import SignUpModal from './components/modals/SignUpModal';
 
 const LoginBox = styled.div`
     box-sizing: border-box;
@@ -54,18 +54,18 @@ function Start() {
                     <LoginBox>
                         <input placeholder="E-mail"></input>
                         <input placeholder="Password"></input>
-                        <div>
+                        <div className="signup-btn">
                             <Link to="/App">
-                                <button>login</button>
+                            <button>login</button>
                             </Link>
-                            <button onClick={openModal}>Signin</button>
-                            {
-                            modalVisible && <SignUpModal
-                            visible={modalVisible}
-                            closable={true}
-                            maskClosable={true}
-                            onClose={closeModal}/>
-                        }
+                            <button onClick={openModal}>SignUp</button>
+                                {
+                                    modalVisible && <SignUpModal
+                                    visible={modalVisible}
+                                    closable={true}
+                                    maskClosable={true}
+                                    onClose={closeModal}/>
+                                }
                         </div>
                     </LoginBox>
                 <Switch>

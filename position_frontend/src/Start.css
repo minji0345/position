@@ -36,3 +36,27 @@ div.start-body {
 	position: relative;
 	top: 5%;
 }
+
+.signup-btn{
+	display: flex;
+	flex-direction: column;
+	margin:5%;
+	width: 90%;
+}
+
+.signup-btn button {
+	color: white;
+	border: none;
+	background-color:black;
+	width: 100%;
+	border-radius: 50px;
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 15px;
+	position: relative;
+	margin: 3%;
+}
+
+.signup-btn button:hover{
+	background-color:#52f25d;
+	cursor: pointer;
+}
