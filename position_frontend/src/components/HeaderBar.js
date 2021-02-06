@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import './HeaderBar.css'
+import { Switch, Link, Route, BrowserRouter as Router } from "react-router-dom"
 
 const HeaderBarBlock = styled.div`
     position:relative;
