@@ -16,18 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token, refresh_jwt_token
-import accounts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # 기본 로직
-    path('teams/', include('accounts.urls')),
-    path('search/', accounts.views.search),
-
-    # 회원 가입 및 로그인
-    path('signin/', obtain_jwt_token),
-    path('signup/', accounts.views.createUser),
-    path('refresh_jwt/', refresh_jwt_token),
-    path('verify_jwt/', verify_jwt_token),
+    path('api/users/', include('accounts.urls')),
+    path('api/teams/', include('teams.urls')),
+    path('api/tasks/', include('tasks.urls')),
+    path('api/schedules/', include('schedules.urls')),
 ]

@@ -53,9 +53,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'accounts.apps.AccountsConfig',
-    'taskManager.apps.TaskmanagerConfig',
-    'rest_framework'
+    'teams.apps.TeamsConfig',
+    'tasks.apps.TasksConfig',
+    'schedules.apps.SchedulesConfig',
 ]
 
 REST_FRAMEWORK = {

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Team, TeamLog, Profile
+from .models import Profile
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.models import User
 
@@ -10,16 +10,10 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'introduction', 'tasks', 'created_at']
 
 
-class TeamSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Team
-        fields = ['id', 'name', 'tag_color', 'created_at', 'users']
-
-
-class TeamLogSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TeamLog
-        fields = ['id', 'user', 'team', 'username', 'date_joined', 'date_quitted']
+        model = User
+        fields = ['id', 'username']
 
 
 class UserCreateSerializer(serializers.ModelSerializer):
@@ -42,9 +36,3 @@ class UserCreateSerializer(serializers.ModelSerializer):
             password=validated_data['password']
             )
         return user
-
-
-class UserSerialzier(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'username']

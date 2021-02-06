@@ -1,11 +1,15 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.http import Http404
-from .models import Task, Schedule
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
+
+from .models import Task
+from .serializers import TaskSerializer
 from accounts.models import Profile
-from .serializers import TaskSerializer, ScheduleSerializer
+from teams.models import Team
+
 
 
 # Create your views here.
@@ -21,7 +25,6 @@ class TaskList(APIView):
 
     def post(self, request, format=None):
         serializer = TaskSerializer(data=request.data)
-        print(request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -52,8 +55,3 @@ class TaskDetail(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATE)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-
-
-
