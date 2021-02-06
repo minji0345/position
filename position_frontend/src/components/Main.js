@@ -14,7 +14,30 @@ const MainBlock = styled.div`
     margin-top:3%;
 `;
 
-function Main({Team}) {
+const Team = [
+  {
+    name : "멋사",
+    tag_color : "#FF5702",
+    users: []
+  },
+  {
+    name : "Position",
+    tag_color : "#F20A01",
+    users: []
+  },
+  {
+    name : "Cont,",
+    tag_color : "#F5C7C8",
+    users: []
+  },
+  {
+    name : "연인",
+    tag_color : "#BAC2E5",
+    users: []
+  }
+]
+
+function Main() {
     return (
     <MainBlock>
         <SideBar Team={Team} ></SideBar>
