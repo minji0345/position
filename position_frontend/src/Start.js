@@ -4,6 +4,7 @@ import './Start.css'
 import logo from './compoenets/images/logo-02.png';
 import styled from 'styled-components'
 import App from './App'
+import SignUpModal from './compoenets/SignUpModal';
 
 const LoginBox = styled.div`
     box-sizing: border-box;
@@ -31,6 +32,21 @@ function Login() {
 
 function Start() {
 
+    const [modalVisible, setModalVisible] = useState(false)
+    
+    const openModal = () => {
+    setModalVisible(true)
+    }
+    const closeModal = () => {
+        setModalVisible(false)
+    }
+
+    SignUpModal.defaultProps = {
+        closable: true,
+        maskClosable: true,
+        visible: false
+    }
+
     return (
         <div className="start-body">
             <Router>
@@ -38,9 +54,19 @@ function Start() {
                     <LoginBox>
                         <input placeholder="E-mail"></input>
                         <input placeholder="Password"></input>
+                        <div>
                             <Link to="/App">
                                 <button>login</button>
                             </Link>
+                            <button onClick={openModal}>Signin</button>
+                            {
+                            modalVisible && <SignUpModal
+                            visible={modalVisible}
+                            closable={true}
+                            maskClosable={true}
+                            onClose={closeModal}/>
+                        }
+                        </div>
                     </LoginBox>
                 <Switch>
                     <Route exact path="/App" component={App} />
