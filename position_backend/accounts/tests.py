@@ -20,6 +20,7 @@ class UserTestCase(TestCase):
         stream = io.BytesIO(response.content)
         self.token = JSONParser().parse(stream)['token']
 
+
     def test_signup(self):
         # create a user
         client = Client()

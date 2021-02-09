@@ -31,6 +31,7 @@ class TeamListView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(users=[self.request.user.profile])
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class TeamDetailView(generics.RetrieveUpdateDestroyAPIView):
