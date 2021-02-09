@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import './Modal.css'
 import { MdClose } from 'react-icons/md';
- 
+
 //selected로 color의 key값을 전달
 
 function SignUpModal({ className,

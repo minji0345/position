@@ -1,0 +1,37 @@
+input {
+	border: none;
+	background-color: #ddded9;
+	margin: 15px;
+	width: 80%;
+	height: 10%;
+	border-radius: 50px;
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 15px;
+	padding-left: 5%;
+	position: relative;
+	top: 5%;
+}
+
+.signup-btn{
+	display: flex;
+	flex-direction: column;
+	margin:5%;
+	width: 90%;
+}
+
+button {
+	color: white;
+	border: none;
+	background-color:black;
+	width: 100%;
+	border-radius: 50px;
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 15px;
+	position: relative;
+	margin: 3%;
+}
+
+button:hover{
+	background-color:#52f25d;
+	cursor: pointer;
+}
