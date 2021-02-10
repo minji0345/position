@@ -30,7 +30,9 @@ class TeamListView(generics.ListCreateAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def perform_create(self, serializer):
-        serializer.save(users=[self.request.user.profile])
+        # 왜 test를 통할때는 false 값이 담기는 걸까?
+        serializer.save(users=[self.request.user.profile], is_active=True)
+        
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
@@ -49,3 +51,4 @@ class TeamDetailView(generics.RetrieveUpdateDestroyAPIView):
         instance.is_active = False
         instance.deleted_at = datetime.datetime.now()
         instance.save()
+
