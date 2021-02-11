@@ -14,6 +14,11 @@ class TeamTestCase(TestCase):
             username="test@email.com",
             password="password123"
         )
+        self.user2 = User.objects.create_user(
+            username="tes1t@email.com",
+            password="password1123"
+        )
+
         client = Client()
         response = client.post('/api/users/signin/', {
             'username': 'test@email.com',
@@ -27,12 +32,14 @@ class TeamTestCase(TestCase):
             'tag_color': 'white',
             'team_info': 'hi, this is test'
         }, HTTP_AUTHORIZATION='JWT %s' % (self.token))
-
+        
         client.post('/api/teams/', {
             'name': 'TEST team2',
             'tag_color': 'white',
             'team_info': 'hi, this is test'
         }, HTTP_AUTHORIZATION='JWT %s' % (self.token))
+        team = Team.objects.get(id=1)
+        team.users.add(self.user2.profile)
 
     def test_create_team(self):
         # create a team
@@ -71,6 +78,45 @@ class TeamTestCase(TestCase):
         stream = io.BytesIO(response.content)
         data = JSONParser().parse(stream)
         self.assertEqual(response.status_code, 200)
+
+    def test_detail_team(self):
+        client = Client()
+        response = client.get('/api/teams/1/', HTTP_AUTHORIZATION='JWT %s' % (self.token))
+        self.assertEqual(response.status_code, 200)
+
+    def test_team_add_user(self):
+        client = Client()
+        team = Team.objects.get(name='TEST team1')
+
+        user = User.objects.create_user(
+            username = "test123@test.com",
+            password = "123"
+        )
+        user_id = user.id
+
+        response = client.put(
+            '/api/teams/%d/%d/' % (team.id, user.id),
+            HTTP_AUTHORIZATION='JWT %s' % (self.token)
+        )
+        stream = io.BytesIO(response.content)
+        after_add_team_users = JSONParser().parse(stream)['users']
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(user_id, after_add_team_users)
+
+    def test_team_delete_user(self):
+        client = Client()
+        team = Team.objects.get(id=1)
+        user = User.objects.get(id=1)
+
+        response = client.delete(
+            '/api/teams/%d/%d/' % (team.id, user.id),
+            HTTP_AUTHORIZATION='JWT %s' % (self.token)
+        )
+
+        self.assertEqual(response.status_code, 204)
+        # self.assertNotIn(user.id, team.users)
+
+
 
 
 

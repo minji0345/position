@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from rest_framework import status
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
 import datetime
@@ -52,3 +53,25 @@ class TeamDetailView(generics.RetrieveUpdateDestroyAPIView):
         instance.deleted_at = datetime.datetime.now()
         instance.save()
 
+
+class TeamUserView(APIView):
+    def get_object(self, pk):
+        return get_object_or_404(Team, id=pk)
+    
+    def put(self, request, tid, uid, format=None):
+        team = self.get_object(pk=tid)
+        profile = get_object_or_404(Profile, id=uid)
+        team.users.add(profile)
+        team.save()
+
+        serializer = TeamSerializer(team)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def delete(self, request, tid, uid, format=None):
+        team = self.get_object(pk=tid)
+        profile = get_object_or_404(Profile, id=uid)
+        team.users.remove(profile)
+        team.save()
+
+        serializer = TeamSerializer(team)
+        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)

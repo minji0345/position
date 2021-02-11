@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from django.http import Http404
 from rest_framework.response import Response
@@ -55,3 +55,26 @@ class TaskDetail(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATE)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class TaskUserView(APIView):
+    def get_object(self, pk):
+        return get_object_or_404(Task, id=pk)
+    
+    def put(self, request, tid, uid, format=None):
+        task = self.get_object(pk=tid)
+        profile = get_object_or_404(Profile, id=uid)
+        task.users.add(profile)
+        task.save()
+
+        serializer = TaskSerializer(task)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def delete(self, request, tid, uid, format=None):
+        task = self.get_object(pk=tid)
+        profile = get_object_or_404(Profile, id=uid)
+        task.users.remove(profile)
+        task.save()
+
+        serializer = TaskSerializer(task)
+        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
