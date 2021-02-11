@@ -70,7 +70,6 @@ class TeamTestCase(TestCase):
         response = client.get('/api/teams/', HTTP_AUTHORIZATION='JWT %s' % (self.token))
         stream = io.BytesIO(response.content)
         data = JSONParser().parse(stream)
-        print(data)
         self.assertEqual(response.status_code, 200)
 
 
