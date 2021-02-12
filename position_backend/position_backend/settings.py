@@ -53,9 +53,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'accounts.apps.AccountsConfig',
-    'taskManager.apps.TaskmanagerConfig',
-    'rest_framework'
+    'teams.apps.TeamsConfig',
+    'tasks.apps.TasksConfig',
+    'schedules.apps.SchedulesConfig',
 ]
 
 REST_FRAMEWORK = {
@@ -73,7 +75,7 @@ JWT_AUTH = {
     'JWT_SECRET_KEY': SECRET_JWT_KEY,
     'JWT_ALGORITHM': 'HS256',
     'JWT_ALLOW_REFRESH': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=15),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=60),
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=1),
 }
 

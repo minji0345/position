@@ -1,11 +1,12 @@
-from django.urls import path, include
+from django.urls import path
 from accounts import views
+from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token, refresh_jwt_token
 
 urlpatterns = [
-    path('', views.getUsers),
-    path('<str:team_title>/', views.getUsers),
-    path('<str:team_title>/<int:pk>/', views.getUsers),
-
-    # manage Task model in taskManager app
-    path('<str:team_title>/tasks/', include('taskManager.urls')),
+    path('', views.createUser, name="create_user"),
+    path('signin/', obtain_jwt_token, name="obtain_jwt_token"),
+    path('<int:uid>/', views.UserDetailView.as_view(), name='user_detail'),
+    path('verify-token', verify_jwt_token, name="verify_jwt_token"),
+    path('refresh-token', refresh_jwt_token, name="refresh_jwt_token"),
+    path('search/', views.search, name="search_user"),
 ]
