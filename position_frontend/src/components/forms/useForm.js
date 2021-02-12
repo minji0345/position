@@ -6,6 +6,8 @@ function useForm({ initValue, onSubmit, validate }) {
     const [errors, setErrors] = useState({})
     const [submitting, setSubmitting] = useState(false)
 
+
+
     const handleChange = (e) => {
         const { name, value } = e.target
         // e.target  즉, 선택된 input란의 name과 value를 받아온다는 이야기?

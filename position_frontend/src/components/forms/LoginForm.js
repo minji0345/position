@@ -1,22 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import useForm from "./useForm";
 import "./form.css"
 
-function LoginForm() {
-    const { values, errors, submitting, handleChange, handleSubmit } = useForm({
-        initialValues: { username: "", password: ""},
+function LoginForm ( ) {
+    //error는 구현 안함.
+    const { values, submitting, handleChange, handleSubmit } = useForm({
+        initialValues: 
+        { 
+            username: " ", 
+            password: " "
+        },
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2))
         }
     })
 
-    // const [inputs, setInputs] = useState({
-    //     username: '',
-    //     password:'',
-    //     password_check:'',
-    // })
-
-    // const { username, password, password_check } = inputs
 
 
     return (
@@ -28,8 +26,9 @@ function LoginForm() {
                 <input type="password" name="password" value={values.password} onChange={handleChange}/>
             </label>
             <button type="submit" disabled={submitting}>
-                Log in
+                Login
             </button>
+            <div>{values.username},{values.password}</div>
         </form>
     )
 }
