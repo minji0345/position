@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import './Modal.css'
 import { MdClose } from 'react-icons/md';
+import LoginForm from '../forms/LoginForm';
 
 //selected로 color의 key값을 전달
 
@@ -28,38 +29,38 @@ function SignUpModal({ className,
 
         //지정된 컬러 값 받아와서 매핑해주는 코드
 
-        //input 값 관리
-        const [inputs, setInputs] = useState({
-            username: '',
-            password:'',
-            password_check:'',
-        })
+    //input 값 관리 -> 다시도전
+    //     const [inputs, setInputs] = useState({
+    //         username: '',
+    //         password:'',
+    //         password_check:'',
+    //     })
 
-        const { username, password, password_check } = inputs
+    //     const { username, password, password_check } = inputs
 
-        const onChange = (e) => {
+    //     const onChange = (e) => {
 
-        const { name, value } = e.target   
+    //     const { name, value } = e.target   
 
-        const nextInputs = {            
-            ...inputs,  
-            [name]: value,
-        }
+    //     const nextInputs = {            
+    //         ...inputs,  
+    //         [name]: value,
+    //     }
 
-        setInputs(nextInputs)       
+    //     setInputs(nextInputs)       
 
-    }
+    // }
     
     //추후에 구현 예정
-    const onReset = () => {			
+    // const onReset = () => {			
         
-        const resetInputs = {       
-            username: '',
-            password:'',
-            password_check:'',
-        }
-        setInputs(resetInputs)      	  
-    }
+    //     const resetInputs = {       
+    //         username: '',
+    //         password:'',
+    //         password_check:'',
+    //     }
+    //     setInputs(resetInputs)      	  
+    // }
 
     //add버튼 누르면 team_name, team_info 명으로 백으로 값 넘겨주기! -> 구현 해야함
 
@@ -74,13 +75,7 @@ function SignUpModal({ className,
             >
             <ModalInner tabIndex="0" className="modal-inner">
                 {closable && <MdClose className="modal-close" onClick={close} />}
-                <div className="modal-inner-box">
-                    <input placeholder="E-mail" name="username" onChange={onChange} value={username}></input>
-                    <input placeholder="Password" name="password" onChange={onChange} value={password}></input>
-                    <input placeholder="Password check" name="password_check" onChange={onChange} value={password_check}></input>
-                    <div> {username},{password} </div>
-                    <button className="modal-btn" onClick={close}>Sign Up</button>
-                </div>
+                <LoginForm/>
             </ModalInner>
             </ModalWrapper>
         </>

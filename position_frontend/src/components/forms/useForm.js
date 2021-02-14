@@ -18,7 +18,7 @@ function useForm({ initValue, onSubmit, validate }) {
         setSubmitting(true)
         e.preventDefault()
         await new Promise((r) => setTimeout(r, 1000))
-        setErrors(validate(values))
+        // setErrors(validate(values))
     }
 
     //validate 함수 사용법 async await 정확히 알기
