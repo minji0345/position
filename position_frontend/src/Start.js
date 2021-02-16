@@ -5,6 +5,7 @@ import logo from './components/images/logo-02.png';
 import styled from 'styled-components'
 import App from './App'
 import SignUpModal from './components/modals/SignUpModal';
+import LoginForm from './components/forms/LoginForm';
 
 const LoginBox = styled.div`
     box-sizing: border-box;
@@ -52,8 +53,6 @@ function Start() {
       <Router>
         <Login></Login>
         <LoginBox>
-          <input placeholder="E-mail"></input>
-          <input placeholder="Password"></input>
           <div className="signup-btn">
             <Link to="/App">
               <button>login</button>
