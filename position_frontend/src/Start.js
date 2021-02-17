@@ -68,7 +68,7 @@ function Start() {
           </div>
         </LoginBox>
         <Switch>
-          <Route exact path="/App" component={App} />
+          <Route exact={true} path="/App" component={App} />
         </Switch>
       </Router>
     </div>
