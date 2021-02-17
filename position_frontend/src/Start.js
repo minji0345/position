@@ -49,29 +49,29 @@ function Start() {
   }
 
   return (
-    <div className="start-body">
-      <Router>
-        <Login></Login>
-        <LoginBox>
-          <div className="signup-btn">
-            <Link to="/App">
-              <button>login</button>
-            </Link>
-            <button onClick={openModal}>SignUp</button>
-            {
-              modalVisible && <SignUpModal
-                visible={modalVisible}
-                closable={true}
-                maskClosable={true}
-                onClose={closeModal} />
-            }
-          </div>
-        </LoginBox>
+    <Router>
+        <div className="start-body">
+          <Login></Login>
+          <LoginBox>
+            <div className="signup-btn">
+              <Link to="/App">
+                <button>login</button>
+              </Link>
+              <button onClick={openModal}>SignUp</button>
+              {
+                modalVisible && <SignUpModal
+                  visible={modalVisible}
+                  closable={true}
+                  maskClosable={true}
+                  onClose={closeModal} />
+              }
+            </div>
+          </LoginBox>
+        </div>
         <Switch>
           <Route exact={true} path="/App" component={App} />
         </Switch>
-      </Router>
-    </div>
+    </Router>
   );
 }
 
