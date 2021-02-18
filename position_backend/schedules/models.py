@@ -9,7 +9,7 @@ class Schedule(models.Model):
     content = models.TextField(default="")
     is_done = models.BooleanField(default=False)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    d_day = models.DateTimeField(default=timezone.now())
+    d_day = models.DateTimeField(blank=True)
 
     def __str__(self):
         return 'title: %s, team: %s' % (self.title, self.team)
