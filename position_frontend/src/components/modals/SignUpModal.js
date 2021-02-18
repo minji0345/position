@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import './Modal.css'
 import { MdClose } from 'react-icons/md';
 import LoginForm from '../forms/LoginForm';
+import SignupForm from '../forms/SignupForm';
 
 //selected로 color의 key값을 전달
 
@@ -75,7 +76,7 @@ function SignUpModal({ className,
       >
         <ModalInner tabIndex="0" className="modal-inner">
           {closable && <MdClose className="modal-close" onClick={close} />}
-          <LoginForm />
+          <SignupForm />
         </ModalInner>
       </ModalWrapper>
     </>

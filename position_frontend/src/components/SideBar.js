@@ -30,7 +30,7 @@ function SideBar({ Team }) {
     (team) => (<TeamList team={team.name} color={team.tag_color} />)
 
   )
-
+  
   const [modalVisible, setModalVisible] = useState(false)
 
   const openModal = () => {

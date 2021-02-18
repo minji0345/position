@@ -18,7 +18,6 @@ function LoginForm() {
     }
   })
 
-
   return (
     <div className="modal-inner-box">
       <form onSubmit={handleSubmit} noValidate>
