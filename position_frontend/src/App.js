@@ -11,12 +11,12 @@ import HeaderBar from './components/HeaderBar';
 
 function App() {
 
-return (
+  return (
     <div className="app-body">
-      <img className="logo-img" src={logo}/>
+      <img className="logo-img" src={logo} />
       <div className="back-img"></div>
       <div className="main-page">
-        <HeaderBar/>
+        <HeaderBar />
         <Main></Main>
       </div>
     </div>
