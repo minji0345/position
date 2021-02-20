@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import './HeaderBar.css'
-import { Switch, Link, Route, BrowserRouter as Router } from "react-router-dom"
+// import { Switch, Link, Route, BrowserRouter as Router } from "react-router-dom"
 
 const HeaderBarBlock = styled.div`
     position:relative;
@@ -14,16 +14,16 @@ const HeaderBarBlock = styled.div`
     justify-content:space-between;
 `;
 
-function HeaderBar({children}) {
+function HeaderBar({ children }) {
     return (
     <HeaderBarBlock>
         <div className="mode">
-            <a>All</a>
-            <a>Public</a>
-            <a>Private</a>
+            <div>All</div>
+            <div>Public</div>
+            <div>Private</div>
         </div>
         <div className="login">
-            <a>Logout</a>
+            <div>Logout</div>
         </div>
     </HeaderBarBlock>
     );

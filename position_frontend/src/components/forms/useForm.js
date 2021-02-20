@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
 function useForm({ initValue, onSubmit, validate }) {
   const [values, setValues] = useState(initValue)
-  const [errors, setErrors] = useState({})
+  // const [errors, setErrors] = useState({})
   const [submitting, setSubmitting] = useState(false)
 
 

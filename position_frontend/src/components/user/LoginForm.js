@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useForm from "./useForm";
+import useForm from "../forms/useForm";
 import styled from 'styled-components'
 import "./form.css"
 import '../modals/Modal.css'

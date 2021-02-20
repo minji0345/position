@@ -4,8 +4,8 @@ import './Start.css'
 import logo from './components/images/logo-02.png';
 import styled from 'styled-components'
 import App from './App'
-import SignUpModal from './components/modals/SignUpModal';
-import LoginForm from './components/forms/LoginForm';
+import SignUpModal from './components/user/SignUpModal';
+// import LoginForm from './components/user/LoginForm';
 
 const LoginBox = styled.div`
     box-sizing: border-box;
@@ -21,11 +21,10 @@ const LoginBox = styled.div`
     padding: 10px 20px;
     `
 
-function Login() {
-
+function Logo() {
   return (
     <>
-      <img className="start-logo-img" src={logo} />
+      <img className="start-logo-img" alt="start-logo"src={logo} />
       <div className="start-back-img"></div>
     </>
   );
@@ -51,7 +50,7 @@ function Start() {
   return (
     <Router>
         <div className="start-body">
-          <Login></Login>
+          <Logo></Logo>
           <LoginBox>
             <div className="signup-btn">
               <Link to="/App">

@@ -54,7 +54,7 @@ function SideBar({ Team }) {
           {teamList}
         </div>
         <div className="add-button">
-          <a onClick={openModal}>+ Add</a>
+          <button onClick={openModal}>+ Add</button>
           {
             modalVisible && <AddTeamModal
               visible={modalVisible}

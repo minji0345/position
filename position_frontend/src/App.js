@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from './components/images/logo-02.png';
 import './App.css';
 import Main from './components/Main';
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="app-body">
-      <img className="logo-img" src={logo} />
+      <img className="logo-img" alt="index-logo" src={logo} />
       <div className="back-img"></div>
       <div className="main-page">
         <HeaderBar />

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import './Modal.css'
+import '../modals/Modal.css'
 import { MdClose } from 'react-icons/md';
-import LoginForm from '../forms/LoginForm';
-import SignupForm from '../forms/SignupForm';
+import SignupForm from './SignUpForm';
 
 //selected로 color의 key값을 전달
 

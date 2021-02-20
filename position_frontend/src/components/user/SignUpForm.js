@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 function SignupForm() {
@@ -15,21 +15,18 @@ function SignupForm() {
       ...inputs,
       [name]: value
     });
-    console.log(inputs)
   }
 
   const handleSubmit = (e) => {
-    const request = axios.post('/api/users/', {
+    e.preventDefault();
+
+    axios.post('/api/users/', {
       'username': inputs.username,
       'password': inputs.password,
       'password_check': inputs.password_check
     })
-    .then(response => {
-      console.log(response.data);
-    })
-    .catch(error => {
-      alert(`양식이 잘못 되었습니다: ${error}`);
-    });
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
 
     setInputs({
       username: "",
@@ -53,7 +50,6 @@ function SignupForm() {
         <button className="modal-btn" type="submit">
           signup
         </button>
-        <div>{inputs.username},{inputs.password}</div>
       </form>
     </div>
   )
