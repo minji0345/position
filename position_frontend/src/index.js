@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Start from './Start';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UserProvider from './components/user/UserContext';
+import Start from './Start';
+
+let token;
+try {
+  token = localStorage.getItem('token');
+} catch(e) {
+  token = null;
+};
+
+const index = !token ? <Start /> : <App />;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Start />
-  </React.StrictMode>,
+  <UserProvider>
+    {index}
+  </UserProvider>,
   document.getElementById('root')
 );
 

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Switch, Link, Route, BrowserRouter as Router } from "react-router-dom"
 import './Start.css'
 import logo from './components/images/logo-02.png';
 import styled from 'styled-components'
-import App from './App'
 import SignUpModal from './components/user/SignUpModal';
-// import LoginForm from './components/user/LoginForm';
+import LoginForm from './components/user/LoginForm';
 
 const LoginBox = styled.div`
     box-sizing: border-box;
@@ -48,29 +46,22 @@ function Start() {
   }
 
   return (
-    <Router>
-        <div className="start-body">
-          <Logo></Logo>
-          <LoginBox>
-            <div className="signup-btn">
-              <Link to="/App">
-                <button>login</button>
-              </Link>
-              <button onClick={openModal}>SignUp</button>
-              {
-                modalVisible && <SignUpModal
-                  visible={modalVisible}
-                  closable={true}
-                  maskClosable={true}
-                  onClose={closeModal} />
-              }
-            </div>
-          </LoginBox>
+    <div className="start-body">
+      <Logo></Logo>
+      <LoginBox>
+        <div className="signup-btn">
+          <LoginForm />
+          <button onClick={openModal}>SignUp</button>
+          {
+            modalVisible && <SignUpModal
+              visible={modalVisible}
+              closable={true}
+              maskClosable={true}
+              onClose={closeModal} />
+          }
         </div>
-        <Switch>
-          <Route exact={true} path="/App" component={App} />
-        </Switch>
-    </Router>
+      </LoginBox>
+    </div>
   );
 }
 
