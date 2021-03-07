@@ -21,7 +21,7 @@ const LoginBox = styled.div`
     padding: 10px 20px;
     `
 
-function Login() {
+function Logo() {
 
   return (
     <>
@@ -51,9 +51,10 @@ function Start() {
   return (
     <Router>
         <div className="start-body">
-          <Login></Login>
+          <Logo/>
           <LoginBox>
             <div className="signup-btn">
+              <LoginForm/>
               <Link to="/App">
                 <button>login</button>
               </Link>
