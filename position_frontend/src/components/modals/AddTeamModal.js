@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import './Modal.css'
 import { MdClose } from 'react-icons/md';
+import TeamAdd from '../forms/TeamAdd';
 
 //지정된 컬러값
 const tagColors1 = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
@@ -21,15 +22,6 @@ function AddTeamModal({ className,
     closable,
     visible,}) {
 
-    //back의 scroll 동작하지 않게 하는 함수, 우리 서비스는 스크롤이 딱히 없으므로 우선 주석처리
-    // useEffect(() => {
-    //     document.body.style.cssText = `position: fixed; top: -${window.scrollY}px`
-    //     return () => {
-    //         const scrollY = document.body.style.top
-    //         document.body.style.cssText = `position: ""; top: "";`
-    //         window.scrollTo(0, parseInt(scrollY || '0') * -1)
-    //     }
-    // }, [])
 
     //modal창 열림 & 닫힘 관리
     const onMaskClick = (e) => {
@@ -97,15 +89,7 @@ function AddTeamModal({ className,
             >
             <ModalInner tabIndex="0" className="modal-inner">
                 {closable && <MdClose className="modal-close" onClick={close} />}
-                <div className="modal-inner-box">
-                    <input placeholder="Team Name" name="team_name" onChange={onChange} value={team_name}></input>
-                    <input placeholder="Team Info" name="team_info" onChange={onChange} value={team_info}></input>
-                    <div className="team-tagcolor-list">
-                        {colorList}
-                    </div>
-                    <div> {team_name},{team_info} </div>
-                    <button className="modal-btn" onClick={close}>Add</button>
-                </div>
+                <TeamAdd/>
             </ModalInner>
             </ModalWrapper>
         </>
