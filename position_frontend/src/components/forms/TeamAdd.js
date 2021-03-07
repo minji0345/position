@@ -51,6 +51,7 @@ function TeamAdd() {
     })
   }
 
+  //colorlist 말고 다른 방식으로 구현 가능할까?
   const colorList = tagColors.map(
     (color) => (<TagColor 
         color={color} key={color}  onChange={handleChange} value={inputs.tag_color} name="tag_color"
@@ -61,10 +62,10 @@ function TeamAdd() {
     <div className="modal-inner-box">
     <form onSubmit={handleSubmit}>
       <label>
-        <input type="text" name="teamname" value={inputs.teamname} onChange={handleChange} />
+        <input placeholder="team name" type="text" name="teamname" value={inputs.teamname} onChange={handleChange} />
       </label>
       <label>
-        <input type="text" name="team_info" value={inputs.team_info} onChange={handleChange} />
+        <input placeholder="tag color"  type="text" name="team_info" value={inputs.team_info} onChange={handleChange} />
       </label>
       <div className="team-tagcolor-list" >
                         {colorList}

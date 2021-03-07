@@ -5,16 +5,6 @@ import './Modal.css'
 import { MdClose } from 'react-icons/md';
 import TeamAdd from '../forms/TeamAdd';
 
-//지정된 컬러값
-const tagColors1 = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
-
-//컬러값을 가진 버튼 하나의 코드
-const TagColor = ({ color, selected }) => {
-    return (
-        <button style={{ background: color}} className="team-tagcolor" onClick={selected}></button>
-    )
-}
-//selected로 color의 key값을 전달
 
 function AddTeamModal({ className,
     onClose,
@@ -36,45 +26,36 @@ function AddTeamModal({ className,
             }
         }
 
-        //지정된 컬러 값 받아와서 매핑해주는 코드
+    //     input 값 관리
+    //     const [inputs, setInputs] = useState({
+    //         team_name: '',
+    //         team_info:'',
+    //     })
 
-        const colorList = tagColors1.map(
-            (color) => (<TagColor 
-                color={color} key={color} 
-                // onChange={() => onSelect(color)} 
-                />)
-        );
+    //     const { team_name, team_info } = inputs
 
-        //input 값 관리
-        const [inputs, setInputs] = useState({
-            team_name: '',
-            team_info:'',
-        })
+    //     const onChange = (e) => {
 
-        const { team_name, team_info } = inputs
+    //     const { name, value } = e.target   
 
-        const onChange = (e) => {
+    //     const nextInputs = {            
+    //         ...inputs,  
+    //         [name]: value,
+    //     }
 
-        const { name, value } = e.target   
+    //     setInputs(nextInputs)       
 
-        const nextInputs = {            
-            ...inputs,  
-            [name]: value,
-        }
-
-        setInputs(nextInputs)       
-
-    }
+    // }
     
-    //추후에 구현 예정
-    const onReset = () => {			
+    // 추후에 구현 예정
+    // const onReset = () => {			
         
-        const resetInputs = {       
-            team_name: '',
-            tag_color: '',
-        }
-        setInputs(resetInputs)      	  
-    }
+    //     const resetInputs = {       
+    //         team_name: '',
+    //         tag_color: '',
+    //     }
+    //     setInputs(resetInputs)      	  
+    // }
 
     //add버튼 누르면 team_name, team_info 명으로 백으로 값 넘겨주기! -> 구현 해야함
 
