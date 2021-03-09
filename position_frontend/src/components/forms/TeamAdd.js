@@ -32,7 +32,7 @@ function TeamAdd() {
   }
 
   const handleSubmit = (e) => {
-    const request = axios.post('/api/users/', {
+    const request = axios.post('/api/teams/', {
       'teamname': inputs.teamname,
       'team_info': inputs.team_info,
       'tag_color': inputs.tag_color,
