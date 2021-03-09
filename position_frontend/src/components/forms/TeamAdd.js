@@ -4,7 +4,8 @@ import axios from 'axios'
 //지정된 컬러값
 const tagColors = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
 
-//컬러값을 가진 버튼 하나의 코드
+//바로 상태를 지정하는게 안되면 아래 방식으로 시도
+//<button style={{ background: "#FF5702"}} value={"#FF5702"} className="team-tagcolor" onClick={()=>(setColor("#FF5702"))}></button>
 const TagColor = ({ selected }) => {
     return (
       <>
@@ -35,6 +36,7 @@ function TeamAdd() {
     
     setInputs({
       ...inputs,
+      ...color,
       [name]: value
       });
     console.log(inputs)
@@ -56,8 +58,11 @@ function TeamAdd() {
     setInputs({
       teamname: "",
       team_info: "",
-      tag_color: ""
     })
+
+    // setColor({
+    //   "",
+    // })
   }
 
   //colorlist 말고 다른 방식으로 구현 가능할까?
