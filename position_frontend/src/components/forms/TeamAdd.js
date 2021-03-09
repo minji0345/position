@@ -5,10 +5,10 @@ import axios from 'axios'
 const tagColors = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
 
 //컬러값을 가진 버튼 하나의 코드
-const TagColor = ({ color, selected }) => {
+const TagColor = ({ selected }) => {
     return (
       <>
-        <button style={{ background: "#FF5702"}} value={"#FF5702"} className="team-tagcolor" onClick={selected}></button>
+        <button style={{ background: "#FF5702"}} value={"#FF5702"} className="team-tagcolor" onClick={setColor("#FF5702")}></button>
         <button style={{ background: "#F20A01"}} value={"#F20A01"} className="team-tagcolor" onClick={selected}></button>
         <button style={{ background: "#F5C7C8"}} value={"#F5C7C8"} className="team-tagcolor" onClick={selected}></button>
         <button style={{ background: "#72A7FF"}} value={"#72A7FF"} className="team-tagcolor" onClick={selected}></button>
@@ -25,9 +25,9 @@ function TeamAdd() {
     const [inputs, setInputs] = useState({
         teamname: "",
         team_info: "",
-        tag_color: "",
     })
 
+    const [color, setColor] = useState("")
 
 
     const handleChange = (e) => {
