@@ -5,11 +5,11 @@ import axios from 'axios'
 const tagColors = ["#FF5702","#F20A01","#F5C7C8","#72A7FF","#BAC2E5","#438A70","#B3D8D6","#F39854"];
 
 //컬러값을 가진 버튼 하나의 코드
-const TagColor = ({ color, selected }) => {
-    return (
-        <button style={{ background: color}} className="team-tagcolor" onClick={selected}></button>
-    )
-}
+// const TagColor = ({ color, selected }) => {
+//     return (
+//         <button style={{ background: color}} className="team-tagcolor" onClick={selected}></button>
+//     )
+// }
 
 function TeamAdd() {
 
@@ -32,7 +32,7 @@ function TeamAdd() {
   }
 
   const handleSubmit = (e) => {
-    const request = axios.post('/api/users/', {
+    const request = axios.post('/api/teams/', {
       'teamname': inputs.teamname,
       'team_info': inputs.team_info,
       'tag_color': inputs.tag_color,
@@ -52,11 +52,11 @@ function TeamAdd() {
   }
 
   //colorlist 말고 다른 방식으로 구현 가능할까?
-  const colorList = tagColors.map(
-    (color) => (<TagColor 
-        color={color} key={color}  onChange={handleChange} value={inputs.tag_color} name="tag_color"
-        />)
-    );
+  // const colorList = tagColors.map(
+  //   (color) => (<TagColor 
+  //       color={color} key={color}  onChange={handleChange} value={inputs.tag_color} name="tag_color"
+  //       />)
+  //   );
 
   return (
     <div className="modal-inner-box">
@@ -68,7 +68,14 @@ function TeamAdd() {
         <input placeholder="tag color"  type="text" name="team_info" value={inputs.team_info} onChange={handleChange} />
       </label>
       <div className="team-tagcolor-list" >
-                        {colorList}
+        <button style={{ background: "#FF5702"}} className="team-tagcolor" ></button>
+        <button style={{ background: "#F20A01"}} className="team-tagcolor" ></button>
+        <button style={{ background: "#F5C7C8"}} className="team-tagcolor" ></button>
+        <button style={{ background: "#72A7FF"}} className="team-tagcolor" ></button>
+        <button style={{ background: "#BAC2E5"}} className="team-tagcolor" ></button>
+        <button style={{ background: "#438A70"}} className="team-tagcolor"></button>
+        <button style={{ background: "#B3D8D6"}} className="team-tagcolor"></button>
+        <button style={{ background: "#F39854"}} className="team-tagcolor"></button>
       </div>
       <button className="modal-btn" type="submit">
         Add
